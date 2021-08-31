@@ -1,19 +1,19 @@
 <template>
-    <div :size="size">
-        <button v-bind="rest">
-            <slot/>
-        </button>
-    </div>
+  <button class="gulu-button"
+  :class="`theme-${theme}`"
+  >
+    <slot />
+  </button>
 </template>
 <script lang='ts'>
-    export default{
-        inheritAttrs:false,//禁止继承父组件的属性
-        setup(props, context){
-            const {size,...rest} = context.attrs;
-            return {size, rest}
+export default {
+    props: {
+        theme: {
+            type: String,
+            default: "button"
         }
     }
+};
 </script>
 <style lang="scss" scoped>
-     
 </style>
