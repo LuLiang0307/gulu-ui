@@ -1,9 +1,9 @@
 <template>
   <div>
     <Button>你好</Button>
-    <Button theme="button">你好，按钮</Button>
-    <Button theme="link">你好，链接</Button>
-    <Button theme="text">你好，文本</Button>
+    <Button theme="button">你好</Button>
+    <Button theme="link">你好</Button>
+    <Button theme="text">你好</Button>
   </div>
 </template>
 <script lang='ts'>
