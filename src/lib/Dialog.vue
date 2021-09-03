@@ -1,5 +1,5 @@
 <template>
-  <template v-if="visiable">
+  <template v-if="visible">
     <Teleport to="body">
       <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
       <div class="gulu-dialog-wrapper">
@@ -25,7 +25,7 @@
 import Button from "./Button.vue";
 export default {
   props: {
-    visiable: {
+    visible: {
       type: Boolean,
       default: false,
     },
@@ -43,7 +43,7 @@ export default {
   components: { Button },
   setup(props, context) {
     const close = () => {
-      context.emit("update:visiable", false);
+      context.emit("update:visible", false);
     };
     const onClickOverlay = () => {
       if (props.closeOnClickOverlay) {
@@ -51,11 +51,13 @@ export default {
       }
     };
     const ok = () => {
+      console.log(props.ok);
       if (props.ok?.() !== false) {
         close();
       }
     };
     const cancel = () => {
+      props.cancel?.();
       close();
     };
     return { close, onClickOverlay, ok, cancel };
