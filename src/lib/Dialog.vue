@@ -1,21 +1,23 @@
 <template>
   <template v-if="visiable">
-    <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="gulu-dialog-wrapper">
-      <div class="gulu-dialog">
-        <header>
-          <slot name="title"/>
-           <span class="gulu-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="gulu-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="gulu-dialog-wrapper">
+        <div class="gulu-dialog">
+          <header>
+            <slot name="title" />
+            <span class="gulu-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content" />
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 </template>
@@ -36,7 +38,7 @@ export default {
     },
     cancel: {
       type: Function,
-    }
+    },
   },
   components: { Button },
   setup(props, context) {
@@ -54,7 +56,7 @@ export default {
       }
     };
     const cancel = () => {
-        close()
+      close();
     };
     return { close, onClickOverlay, ok, cancel };
   },
