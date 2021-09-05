@@ -25,11 +25,12 @@
         :key="index"
         :class="{ selected: c.props.title === selected }"
       />
+      <!-- <component :is="current" :key="current.props.title"/> 持续报错-->
     </div>
   </div>
 </template>
 <script lang="ts">
-import { onMounted, ref, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
@@ -68,6 +69,10 @@ export default {
     const select = (title: String) => {
       context.emit("update:selected", title);
     };
+    //使用current一直报错
+    // const current = computed(()=>{
+    //     return defaults.find((tag)=>{tag.props.title === props.selected})
+    // })
     return {
       defaults,
       titles,

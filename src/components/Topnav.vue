@@ -23,7 +23,6 @@ import { inject, Ref } from 'vue'
 </script>
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -41,6 +40,7 @@ import { inject, Ref } from 'vue'
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
+    margin-right: 20px;
     > li {
       margin: 0 1em;
     }
