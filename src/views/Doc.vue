@@ -9,13 +9,13 @@
           <li><router-link to="/doc/install">安装</router-link></li>
           <li><router-link to="/doc/get-started">开始</router-link></li>
         </ol>
-        <h2>组件列表</h2>    
+        <h2>组件列表</h2>
         <ol>
           <li><router-link to="/doc/switch">Switch 组件</router-link></li>
           <li><router-link to="/doc/button">Button 组件</router-link></li>
           <li><router-link to="/doc/dialog">Dialog 组件</router-link></li>
           <li><router-link to="/doc/tabs">Tabs 组件</router-link></li>
-        </ol>    
+        </ol>
       </aside>
       <main>
         <router-view />
@@ -24,19 +24,18 @@
   </div>
 </template>
 <script lang='ts'>
-import Topnav from '../components/Topnav.vue'
-  import { inject, Ref } from 'vue'
+import Topnav from "../components/Topnav.vue";
+import { inject, Ref } from "vue";
 export default {
-  name:'App',
-  components:{
-    Topnav
+  name: "App",
+  components: {
+    Topnav,
   },
-  setup(){
-    const menuVisible = inject<Ref<boolean>>('menuVisible')
-    return {menuVisible}
-  }
-}
-
+  setup() {
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
+    return { menuVisible };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .layout {
@@ -51,7 +50,7 @@ export default {
     padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
-      padding-left: 0; 
+      padding-left: 0;
     }
   }
 }
@@ -69,7 +68,6 @@ export default {
 aside {
   background: lightblue;
   width: 150px;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
@@ -77,14 +75,22 @@ aside {
   height: 100%;
   > h2 {
     margin-bottom: 4px;
+    padding: 0 16px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      a {
+          padding: 4px 16px;
+          display: block;
+          text-decoration: none;
+        &.router-link-active {
+          background: white;
+        }
+      }
     }
   }
 }
- main {
+main {
   overflow: auto;
 }
 </style> 

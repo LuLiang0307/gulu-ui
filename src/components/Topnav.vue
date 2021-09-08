@@ -40,8 +40,8 @@ export default {
 <style lang="scss" scoped>
 $color: #007974;
 .icon {
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
