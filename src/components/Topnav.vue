@@ -7,10 +7,10 @@
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/Doc">Doc</router-link>
+        <router-link to="/Doc" v-if="toggleDocVisible">文档</router-link>
       </li>
     </ul>
-    <svg class="toggleAside" @click="toggleMenu">
+    <svg class="toggleAside" @click="toggleMenu" v-if="toggleMenuButtonVisible">
       <use xlink:href="#icon-menu"></use>
     </svg>
   </div>
@@ -18,7 +18,16 @@
 <script lang='ts'>
 import { inject, Ref } from "vue";
 export default {
-  name: "App",
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false,
+    },
+    toggleDocVisible:{
+      type:Boolean,
+      default: true
+    }
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>("menuVisible");
     const toggleMenu = () => {
