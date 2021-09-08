@@ -4,7 +4,8 @@
   </div>
 </template>
 <script>
+export default{}
 </script>
-<style module lang="scss">
+<style lang="scss">
      
 </style>
