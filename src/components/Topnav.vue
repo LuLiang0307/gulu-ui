@@ -1,13 +1,19 @@
 <template>
-    <div class="topnav">
-      <div class="logo">LOGO</div>
-      <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
-      </ul>
-      <span class="toggleAside" @click="toggleMenu"></span>
-    </div>
-    
+  <div class="topnav">
+    <router-link to="/" class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-girl"></use>
+      </svg>
+    </router-link>
+    <ul class="menu">
+      <li>
+        <router-link to="/Doc">Doc</router-link>
+      </li>
+    </ul>
+    <svg class="toggleAside" @click="toggleMenu">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
+  </div>
 </template>
 <script lang='ts'>
 import { inject, Ref } from "vue";
@@ -24,7 +30,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 $color: #007974;
-
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 .topnav {
   color: $color;
   display: flex;
@@ -50,9 +62,9 @@ $color: #007974;
     }
   }
   > .toggleAside {
-    width: 24px;
-    height: 24px;
-    background: red;
+    color: $color;
+    width: 20px;
+    height: 20px;
     position: absolute;
     left: 16px;
     top: 50%;
