@@ -12,22 +12,14 @@ import Button2Demo from "../components/Button2.demo.vue";
 import Button3Demo from "../components/Button3.demo.vue";
 import Button4Demo from "../components/Button4.demo.vue";
 import Button5Demo from "../components/Button5.demo.vue";
-import Button from "../lib/Button.vue";
 export default {
   components: {
-    Button,
     Button1Demo,
     Button2Demo,
     Button3Demo,
     Button4Demo,
     Button5Demo,
-  },
-  setup() {
-    const onClick = () => {
-      console.log("hi");
-    };
-    return { onClick };
-  },
+  }
 };
 </script>
 <style module lang="scss">
