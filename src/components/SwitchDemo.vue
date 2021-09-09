@@ -1,26 +1,18 @@
 <template>
-  <Demo :component="Switch1Demo"/>
-  <Demo :component="Switch2Demo"/>
+  <Demo :component="Switch1Demo" />
+  <Demo :component="Switch2Demo" />
 </template>
 <script>
-import { ref } from "vue";
-import Switch from "../lib/Switch.vue";
-import Button from "../lib/Button.vue";
 import Switch1Demo from "../components/Switch1.demo.vue";
 import Switch2Demo from "../components/Switch2.demo.vue";
-import "prismjs";
-import "prismjs/themes/prism-okaidia.css";
 import Demo from "../components/Demo.vue";
 const Prism = window.Prism;
 export default {
   components: {
-    Switch,
-    Button,
     Demo,
   },
   setup() {
-    const bool = ref(false);
-    return { bool, Switch1Demo, Switch2Demo, Prism };
+    return { Switch1Demo, Switch2Demo };
   },
 };
 </script>
