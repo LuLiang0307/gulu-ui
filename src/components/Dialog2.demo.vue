@@ -1,3 +1,7 @@
+<demo>
+一键打开
+</demo>
+
 <template>
   <h1>示例2</h1>
   <Button @click="showDialog">click</Button>

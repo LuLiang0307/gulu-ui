@@ -1,5 +1,5 @@
 <template>
-  <div>Dialog示例</div>
+  <h1>Dialog示例</h1>
   <Dialog1Demo />
   <Dialog2Demo />
 </template>

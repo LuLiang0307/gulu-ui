@@ -1,3 +1,7 @@
+<demo>
+常规使用
+</demo>
+
 <template>
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>

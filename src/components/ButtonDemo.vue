@@ -1,5 +1,5 @@
 <template>
-  <div>Button 示例</div>
+  <h1>Button 示例</h1>
   <Button1Demo />
   <Button2Demo />
   <Button3Demo />
